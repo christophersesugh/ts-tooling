@@ -2,7 +2,6 @@ import http from 'node:http';
 
 const server = http.createServer((req, res) => {
   console.log(req.method, req.url);
-  const url = new URL(req.url || '', `http://${req.headers.host}`);
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello, world!\n');
 });
